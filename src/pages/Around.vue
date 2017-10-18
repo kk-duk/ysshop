@@ -22,5 +22,5 @@
 </script>
 
 <style scoped>
-  @import "../style/mixin.css";
+  @import "../style/reset.css";
 </style>

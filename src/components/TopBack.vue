@@ -12,11 +12,10 @@
     name: '',
     data () {
       return {
-        name: '',
-        title: '无名页面'
+        name: ''
       }
     },
-    method: {
+    methods: {
       back: function () {
         this.$router.back(-1)
       }
@@ -24,10 +23,11 @@
   }
 </script>
 
-<style>
-  @import "../style/mixin.css";
+<style scoped>
+  @import "../style/reset.css";
 
   .back-content{
+    width: 100%;
     height: 2rem;
     padding: .25rem 0;
 
@@ -35,21 +35,24 @@
 
     position: fixed;
     top: 0;
+
+    z-index: 100;
   }
 
   .back-content>img{
-    height: 2rem;
+    height: 1.6rem;
 
     position: absolute;
-    top: .25rem;
-    left: .25rem;
+    top: .45rem;
+    left: .45rem;
   }
 
   .back-content>p{
+    width: 100%;
     line-height: 2rem;
 
-    font-size: 1.2rem;
-    color: rgba(0,0,0,0.6);
+    font-size: 1rem;
+    color: rgba(0,0,0,0.4);
 
     text-align: center;
   }

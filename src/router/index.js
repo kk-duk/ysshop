@@ -5,6 +5,7 @@ import Around from '../pages/Around.vue'
 import Recommend from '../pages/Recommend.vue'
 import UserInfo from '../pages/UserInfo.vue'
 import Cities from '../pages/Cities.vue'
+import Search from '../pages/Search.vue'
 
 Vue.use(Router)
 
@@ -13,14 +14,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: HomePage,
-      children: [
-        {
-          path: 'cities',
-          name: 'Cities',
-          component: Cities
-        }
-      ]
+      component: HomePage
     },
     {
       path: '/around',
@@ -36,6 +30,16 @@ export default new Router({
       path: '/userinfo',
       name: 'UserInfo',
       component: UserInfo
+    },
+    {
+      path: '/cities',
+      name: 'Cities',
+      component: Cities
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ]
 })

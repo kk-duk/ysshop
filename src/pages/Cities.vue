@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="top-pd">
     <TopBack>
       <p slot="title">选择您所在的城市</p>
     </TopBack>
@@ -25,5 +25,6 @@
 </script>
 
 <style>
-  @import "../style/mixin.css";
+  @import "../style/reset.css";
+  @import "../style/common.css";
 </style>
