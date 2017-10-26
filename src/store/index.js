@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
@@ -20,14 +21,12 @@ const state = {
     {img: 'http://www.bravo-buy.com/static/image/homePage/meun3.png', des: '酒店'},
     {img: 'http://www.bravo-buy.com/static/image/homePage/meun5.png', des: '家居'},
     {img: 'http://www.bravo-buy.com/static/image/homePage/meun6.png', des: '外卖'}
-  ]
+  ],
+  location: '绵阳',
+  currentShop: ''
 }
 export default new Vuex.Store({
   state: state,
   actions: {},
-  mutations: {
-    RefreshGodEye: (state, newEye) => {
-      state.godEye = newEye
-    }
-  }
+  mutations: mutations
 })

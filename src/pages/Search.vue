@@ -34,7 +34,7 @@
 </script>
 <style scoped>
   @import "../style/reset.css";
-  @import "../style/common.css";
+  @import "../style/common.scss";
 
   .search-content{
     width: 100%;

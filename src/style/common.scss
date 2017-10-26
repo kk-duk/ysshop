@@ -1,0 +1,43 @@
+/*主色调*/
+$mainHue: #FFBA08;
+
+/*字号、颜色*/
+$normalFont: .8rem;
+$normalColor: rgba(0,0,0,0.8);
+$lagerFont: 1rem;
+
+/*头部、底部高度*/
+$headHeight: 2.5rem;
+$bottomHeight: 2.5rem;
+
+/*主页面内边距*/
+$pd : 5px;
+@mixin pd{
+  padding: 2.7rem $pd $bottomHeight $pd ;
+}
+
+/*其它公用样式*/
+.clear{//清除浮动
+  clear: both;
+}
+.top-pd{/*顶部padding*/
+  padding-top: $headHeight;
+}
+.btm-pd{/*底部padding*/
+  padding-bottom: $bottomHeight;
+}
+
+.oneline-text__center{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}

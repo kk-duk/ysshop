@@ -26,5 +26,5 @@
 
 <style>
   @import "../style/reset.css";
-  @import "../style/common.css";
+  @import "../style/common.scss";
 </style>
