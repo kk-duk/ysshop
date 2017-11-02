@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import RouteModel from '../config/env'
+import {RouteModel} from '../config/env'
 import HomePage from '../pages/HomePage.vue'
 import Around from '../pages/Around.vue'
 import Recommend from '../pages/Recommend.vue'
@@ -8,6 +8,7 @@ import UserInfo from '../pages/UserInfo.vue'
 import Cities from '../pages/Cities.vue'
 import Search from '../pages/Search.vue'
 import ShopHome from '../pages/shop/ShopHome.vue'
+import ActivePage from '../pages/ActivePage.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,12 @@ export default new Router({
       path: '/shopHome/:id',
       name: 'Shop',
       components: { default: ShopHome },
+      props: { default: true }
+    },
+    {
+      path: '/active/:url',
+      name: 'Active',
+      components: { default: ActivePage },
       props: { default: true }
     }
   ]

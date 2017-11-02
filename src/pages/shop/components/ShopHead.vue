@@ -1,7 +1,7 @@
 <template>
   <div style="box-shadow:0 0 9px #ccc;">
     <!--图片展示-->
-    <div class="pic-content">
+    <div class="pic-content" ref="img">
       <img src="http://www.bravo-buy.com/upload/img/thumb_1507618369099.jpg" alt="大图">
     </div>
     <!--状态-->
@@ -28,20 +28,36 @@
       </div>
       <div class="clear"></div>
     </div>
+
+    <div style="height:1000px;"></div>
   </div>
 </template>
 <script>
   export default {
     name: '',
+    props: ['scrollY'],
     data: function () {
       return {}
     },
     computed: {
+    },
+    watch: {
+      scrollY: function () {
+//        console.log(scrollY)
+        if (scrollY < 100) {
+          this.$refs.img.style.height = (200 - scrollY) + 'px'
+          this.$refs.img.style.width = (200 - scrollY) + 'px'
+        }
+      }
+    },
+    mounted: function () {
+    },
+    activated: function () {
     }
   }
 </script>
 <style lang="scss" scoped>
-  @import "../../../style/reset.css";
+  @import "../../../style/reset";
   @import "../../../style/common.scss";
 
   .pic-content{

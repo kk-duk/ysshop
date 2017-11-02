@@ -39,7 +39,7 @@
 </script>
 <style lang="scss" scoped>
   @import "../style/swiper.min.css";
-  @import "../style/reset.css";
+  @import "../style/reset";
 
   .menu{
     box-sizing: border-box;

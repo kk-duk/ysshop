@@ -25,6 +25,6 @@
 </script>
 
 <style>
-  @import "../style/reset.css";
+  @import "../style/reset.scss";
   @import "../style/common.scss";
 </style>

@@ -13,6 +13,11 @@ Vue.use(VueAwesomeSwiper) // 轮播图 AwesomeSwiper
 
 Vue.config.productionTip = false
 
+// Vue.transition('bounce', {
+//   enterClass: 'bounceInLeft',
+//   leaveClass: 'bounceOutRight'
+// })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -2,8 +2,8 @@
   <div class="search-content">
     <div class="location" @click="toCities()">
       <img src="../static/icon/location.svg" alt="">
-      <p v-if="location">{{location}}</p>
-      <p v-if="!location">定位...</p>
+      <p v-if="this.location">{{this.location}}</p>
+      <p v-if="!this.location">定位...</p>
     </div>
     <input class="search-box" type="text" v-bind:placeholder="placeholder" @click="toSearch()">
     <div class="more">
@@ -15,11 +15,11 @@
 <script>
   export default {
     name: '',
+    props: ['location'],
     data () {
       return {
         name: '',
-        placeholder: '请点击搜索',
-        location: '黔西南土家族苗族自治县'
+        placeholder: '请点击搜索'
       }
     },
     methods: {
@@ -33,8 +33,8 @@
   }
 </script>
 
-<style scoped>
-@import "../style/reset.css";
+<style lang="scss" scoped>
+@import "../style/reset";
 
   .search-content{
     width: 100%;
@@ -48,58 +48,64 @@
     top: 0;
 
     z-index: 100;
-  }
+    .location{
+      width: 20%;
+      height: 2rem;
 
-.search-content>.location{
-  width: 20%;
-  height: 2rem;
+      float: left;
+      p{
+        display: block;
+        width: 70%;
+        text-align: center;
 
-  float: left;
-}
-.search-content>.search-box{
-  width: 60%;
-  height: 2rem;
+        line-height: 2rem;
 
-  float: left;
-}
-.search-content>.more{
-  width:20%;
-  height: 2rem;
+        color: rgba(0,0,0,0.6);
 
-  float: left;
-}
-.location>p{
-  display: block;
-  width: 70%;
-  text-align: center;
+        font-size: .7rem;
 
-  line-height: 2rem;
+        float: left;
 
-  color: rgba(0,0,0,0.6);
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      img{
+        width: 30%;
+        height: 2rem;
 
-  font-size: .7rem;
+        float: left;
+      }
+    }
+    .search-box{
+      width: 60%;
+      height: 2rem;
 
-  float: left;
+      float: left;
+    }
+    .more{
+      width:20%;
+      height: 2rem;
 
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-.location>img{
-  width: 30%;
-  height: 2rem;
+      padding:.2rem 0;
 
-  float: left;
-}
-  .search-content>input{
-    width: 60%;
-    height: 2rem;
+      float: left;
+      img{
+        height: 1.6rem;
+        border-radius: 50%;
+        box-shadow: 0 0 0px 3px #eee;
+      }
+    }
+    input{
+      width: 60%;
+      height: 2rem;
 
-    border-radius: 1rem;
+      border-radius: 1rem;
 
-    border:none;
+      border:none;
 
-    text-align: center;
-    line-height: 2rem;
+      text-align: center;
+      line-height: 2rem;
+    }
   }
 </style>

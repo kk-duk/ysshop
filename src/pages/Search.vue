@@ -33,7 +33,7 @@
   }
 </script>
 <style scoped>
-  @import "../style/reset.css";
+  @import "../style/reset.scss";
   @import "../style/common.scss";
 
   .search-content{

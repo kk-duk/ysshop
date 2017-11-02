@@ -21,5 +21,5 @@
 </script>
 
 <style scoped>
-  @import "../style/reset.css";
+  @import "../style/reset.scss";
 </style>

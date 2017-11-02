@@ -6,9 +6,16 @@ $normalFont: .8rem;
 $normalColor: rgba(0,0,0,0.8);
 $lagerFont: 1rem;
 
+$white: #FFF;
+
 /*头部、底部高度*/
 $headHeight: 2.5rem;
 $bottomHeight: 2.5rem;
+
+/*绝对定位元素层级分列*/
+$level1: 10;
+$level2: 100;
+$level3: 1000;
 
 /*主页面内边距*/
 $pd : 5px;
@@ -16,6 +23,10 @@ $pd : 5px;
   padding: 2.7rem $pd $bottomHeight $pd ;
 }
 
+@mixin font($lineHeight, $fontSize){
+  line-height:$lineHeight;
+  font-size:$fontSize;
+}
 /*其它公用样式*/
 .clear{//清除浮动
   clear: both;

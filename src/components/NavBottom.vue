@@ -4,18 +4,18 @@ ysshop-component-NavBottom
 -->
 <template>
   <div class="nav-bottom">
-    <div v-for="nav in navs" class="nav" @click="clicked(nav.to,nav.name)">
+    <div v-for="item in navs" class="nav" @click="FocusOn(item.to,item.id)">
       <div class="nav-content">
-        <img v-if="godEye != nav.name" :src="nav.img" alt="">
-        <img v-if="godEye === nav.name" :src="nav.imgOn" alt="">
-        <p>{{nav.name}}</p>
+        <img v-if="Focus !== item.id" :src="item.img" alt="">
+        <img v-if="Focus === item.id" :src="item.imgOn" alt="">
+        <p>{{item.name}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import store from '../store/index'
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
     name: '',
@@ -27,46 +27,51 @@ ysshop-component-NavBottom
             to: '/',
             img: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav1.png',
             imgOn: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav1-1.png',
-            name: '首页'
+            name: '首页',
+            id: 'home'
           },
           around: {
             to: './around',
             img: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav2.png',
             imgOn: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav2-1.png',
-            name: '附近'
+            name: '附近',
+            id: 'around'
           },
           recommend: {
             to: './recommend',
             img: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav3.png',
             imgOn: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav3-1.png',
-            name: '推荐'
+            name: '推荐',
+            id: 'recommend'
           },
           self: {
             to: './userinfo',
             img: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav4.png',
             imgOn: 'http://owvtmdw1k.bkt.clouddn.com/nav/nav4-1.png',
-            name: '我'
+            name: '我',
+            id: 'self'
           }
         }
       }
     },
     methods: {
-      clicked: function (to, newEye) {
-        this.$emit('clicked')
+      FocusOn: function (to, params) {
         this.$router.push(to)
-        store.commit('RefreshGodEye', newEye)
-      }
+        this.FocusChange(params)
+      },
+      ...mapActions(['FocusChange'])
     },
     computed: {
-      godEye: function () {
-        return store.state.godEye
-      }
+      ...mapGetters(['Focus'])
+    },
+    mounted: function () {
+//      console.log(this.Focus)
     }
   }
 </script>
 
 <style scoped>
-  @import "../style/reset.css";
+  @import "../style/reset.scss";
 
   .nav-bottom{
     width: 100%;
