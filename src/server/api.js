@@ -1,6 +1,9 @@
 import {obtain} from './axios' // the package of axios
 import * as bill from './atm' // the descriptions of all the interface
 
+/*  */
+
+/* 默认接口 */
 export default {
   default: function () {
     console.log('there is apis!')

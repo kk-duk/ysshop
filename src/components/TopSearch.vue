@@ -34,7 +34,8 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../style/reset";
+  @import "../style/reset";
+  @import "../style/common";
 
   .search-content{
     width: 100%;
@@ -46,8 +47,8 @@
 
     position: fixed;
     top: 0;
-
     z-index: 100;
+
     .location{
       width: 20%;
       height: 2rem;
@@ -94,6 +95,8 @@
         height: 1.6rem;
         border-radius: 50%;
         box-shadow: 0 0 0px 3px #eee;
+
+        background: $white;
       }
     }
     input{

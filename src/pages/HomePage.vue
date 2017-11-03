@@ -5,7 +5,7 @@
 
     <!--顶部搜索-->
     <TopSearch :location="Region.name">
-      <img src="../assets/logo.png" alt="" slot="more">
+      <img src="../assets/head.png" alt="" slot="more">
     </TopSearch>
 
     <!--轮播-->
@@ -63,16 +63,19 @@
   import NewBz from '../components/NewBz.vue'
 
   // store 辅助方法
-  import { mapGetters, mapActions } from 'vuex'
+//  import { mapGetters, mapActions } from 'vuex'
 
   // 实用方法
+
+  // 第三方接入
+  import {getWxInfo, wxConfig} from '../utils/wechat'
 
   // 主体程序
   export default {
     name: 'HomePage',
     data () {
       return {
-        active: false,
+        active: true,
         boutiqueTwo: [
           {
             one: {img: 'http://www.bravo-buy.com/upload/img/thumb_1507625120538.jpg', des: '爱生活更爱牛排', shopid: 'sp_07'},
@@ -119,6 +122,8 @@
       this.HomeInit()
     },
     activated: function () {
+//      getWxInfo()
+//      wxConfig()
     }
   }
 </script>

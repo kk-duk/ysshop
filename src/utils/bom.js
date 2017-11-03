@@ -19,3 +19,8 @@ export const letScroll = function () {
 export const toTop = function () {
   window.scrollTo(0, 0)
 }
+
+// 获取当前url
+export const currentUrl = function () {
+  return window.location
+}

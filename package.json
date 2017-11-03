@@ -14,15 +14,16 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "animate.css": "^3.5.2",
     "axios": "^0.17.0",
+    "jweixin": "^1.0.0",
     "vue": "^2.4.2",
     "vue-animate": "^0.0.4",
     "vue-awesome-swiper": "^2.6.7",
     "vue-axios": "^2.0.2",
+    "vue-loading": "^0.1.4",
     "vue-router": "^2.7.0",
     "vuex": "^3.0.0",
-    "vue-loading":"^0.1.4"
+    "script-loader":"^0.7.2"
   },
   "devDependencies": {
     "axios": "~0.17.0",

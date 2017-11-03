@@ -6,7 +6,7 @@ click to ActivePage
 -->
 <template>
   <div class="active-content" @click="toActive">
-    <img src="../assets/logo.png" alt="">
+    <img src="../assets/redpack.png" alt="">
     <slot name="des"></slot>
   </div>
 </template>
@@ -34,17 +34,38 @@ click to ActivePage
   }
 </script>
 <style lang="scss" scoped>
+  @import "../style/common";
+
   .active-content{
-    width: 90px;
-    height: 90px;
+    width: 3rem;
+    height: 3rem;
 
     position: fixed;
-    bottom: 200px;
-    left: 30px;
+    bottom: 5rem;
+    left: 1rem;
+    z-index: $level3;
 
     img{
-      height: 90px;
-      width: 90px;
+      height: 3rem;
+      width: 3rem;
+
+      animation: swing 1.5s linear infinite;
+      transform-origin: 50% 100%;
+    }
+  }
+
+  @keyframes swing {
+    20%{
+      transform: rotate(10deg);
+    }
+    40%{
+      transform: rotate(-10deg)
+    }
+    60%{
+      transform: rotate(10deg);
+    }
+    80%{
+      transform: rotate(-10deg)
     }
   }
 </style>
