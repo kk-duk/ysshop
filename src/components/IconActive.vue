@@ -13,7 +13,7 @@ click to ActivePage
 <script>
   export default {
     name: '',
-    props: ['url'],
+    props: ['type'],
     data: function () {
       return {}
     },
@@ -25,8 +25,7 @@ click to ActivePage
     },
     methods: {
       toActive: function () {
-        let params = this.url.split('/')
-        this.$router.push({path: `/active/${params}`})
+        this.$router.push({path: `/active/${this.type}`})
       }
     },
     activated: function () {

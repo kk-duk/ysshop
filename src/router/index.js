@@ -52,7 +52,7 @@ export default new Router({
       props: { default: true }
     },
     {
-      path: '/active/:url',
+      path: '/active/:type',
       name: 'Active',
       components: { default: ActivePage },
       props: { default: true }

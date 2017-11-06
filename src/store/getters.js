@@ -1,6 +1,7 @@
 /*
 * getters
 * */
+
 export default {
   // 获取客户端信息
   Evn: state => {
@@ -13,5 +14,13 @@ export default {
   // 获取当前所在Focus
   Focus: state => {
     return state.FOCUS
+  },
+  // 根据活动类型获取活动地址
+  Active: state => {
+    return state.ActiveUrl
+  },
+  // 获取周边商家
+  Around: state => {
+    return state.around
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="btm-pd">
     <!--top pannel-->
     <TopPannel>
       <p slot="des">推荐</p>
@@ -49,6 +49,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   @import "../style/reset.scss";
+  @import "../style/common.scss";
 </style>

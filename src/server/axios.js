@@ -1,3 +1,6 @@
+/*
+* The package of network servers
+* */
 import vue from 'vue'
 import axios from 'axios'
 import vueAxios from 'vue-axios'
@@ -29,6 +32,7 @@ export function obtain (url, params, type) {
   })
 }
 
+/* 默认接口，说明 */
 export default {
   info: 'there is axios.js'
 }

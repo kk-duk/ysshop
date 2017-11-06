@@ -13,13 +13,14 @@ import cart from './modules/cart' // 购物车状态管理模块
 
 Vue.use(Vuex)
 
+/* 暴露接口 */
 export default new Vuex.Store({
   state,
   getters,
   mutations,
   actions,
   modules: {
-    shop,
-    cart
+    shop: shop,
+    cart: cart
   }
 })

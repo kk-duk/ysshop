@@ -3,7 +3,7 @@
 * */
 const appApi = 'appServer/' // 应用服务
 const assetsApi = 'assetServer/' // 资源服务
-const routeModel = 'history' // 路由模式
+const routeModel = 'hash' // 路由模式
 const city = {id: '0001', name: '绵阳'} // 默认城市
 
 export default {

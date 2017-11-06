@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LoadFull chroma="4" v-if="load"></LoadFull>
+    <LoadFull chroma="5" v-if="load"></LoadFull>
     <TopBack>
       <p slot="title">商家名称</p>
     </TopBack>
@@ -57,7 +57,7 @@
       const that = this
       setTimeout(function () {
         that.load = false
-      }, 3000)
+      }, 1000)
     }
   }
 </script>

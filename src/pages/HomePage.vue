@@ -1,7 +1,7 @@
 <template>
   <div class="top-pd btm-pd">
     <!--<p @click="toActive">active</p>-->
-    <Active v-if="active" url="http://www.阿里巴巴.com"></Active>
+    <Active v-if="active" type="main"></Active>
 
     <!--顶部搜索-->
     <TopSearch :location="Region.name">
@@ -9,7 +9,7 @@
     </TopSearch>
 
     <!--轮播-->
-    <Swiper class="swiper" :source="this.swiperSrc" mode="flip"></Swiper>
+    <Swiper ref="swiper" id="swiper" class="swiper" :source="this.swiperSrc" mode="flip"></Swiper>
 
     <!--分类-->
     <Category></Category>
@@ -35,7 +35,7 @@
 
     <div style="padding: 10px;"> <!--大幅推荐 boutiqueBig-->
       <div class="content" v-for="item in boutique" :key="item.shopid" @click="toShop(item.shopid)">
-        <img :src="item.img" alt="">
+        <img v-lazy="item.img" alt="">
         <p class="oneline-text__center">{{item.des}}</p>
       </div>
     </div>
@@ -54,7 +54,7 @@
 
 <script>
   // 组件
-  import Active from '../components/Active.vue'
+  import Active from '../components/IconActive.vue'
   import NavBottom from '../components/NavBottom.vue'
   import TopSearch from '../components/TopSearch.vue'
   import Swiper from '../components/Swiper.vue'
@@ -63,10 +63,13 @@
   import NewBz from '../components/NewBz.vue'
 
   // store 辅助方法
-//  import { mapGetters, mapActions } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
 
   // 实用方法
+//  import {toTop} from '../utils/bom'
 
+  // 指令
+//  import { v-lazy } from 'vue-lazyload'
   // 第三方接入
   import {getWxInfo, wxConfig} from '../utils/wechat'
 
@@ -122,8 +125,16 @@
       this.HomeInit()
     },
     activated: function () {
-//      getWxInfo()
-//      wxConfig()
+      getWxInfo()
+      wxConfig()
+      // todo 尝试
+      document.addEventListener('touchstart', touch, false)
+      document.addEventListener('touchmove', touch, false)
+      document.addEventListener('touchend', touch, false)
+      var that = this
+      function touch () {
+        console.log(that.$refs.swiper.$el.offsetTop)
+      }
     }
   }
 </script>
